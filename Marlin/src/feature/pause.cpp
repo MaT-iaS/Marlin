@@ -287,6 +287,7 @@ bool load_filament(const_float_t slow_load_length/*=0*/, const_float_t fast_load
           KEEPALIVE_STATE(PAUSED_FOR_USER);
           wait_for_user = false;
           #if ANY(HAS_MARLINUI_MENU, DWIN_LCD_PROUI, DWIN_CREALITY_LCD_JYERSUI)
+            pause_menu_response = PAUSE_RESPONSE_WAIT_FOR;
             ui.pause_show_message(PAUSE_MESSAGE_OPTION); // Also sets PAUSE_RESPONSE_WAIT_FOR
           #else
             pause_menu_response = PAUSE_RESPONSE_WAIT_FOR;
